@@ -1,5 +1,91 @@
 <div class="dashboard-container">
-    <h2>Graph</h2>
-    
+    <div class="charts-container">
+      <div class="chart" style="background-color: lightgray;">
+        <h1>No. Of Books</h1>
+        <apx-chart
+        [series]="barChartOptions.series"
+        [chart]="barChartOptions.chart"
+        [xaxis]="barChartOptions.xaxis"
+        [title]="barChartOptions.title"
+      ></apx-chart>
+      
+      </div>
+      <div class="chart" style="background-color: lightgray;">
+        <h1>Books Distribution</h1>
+        <apx-chart
+          [series]="pieChartOptions.series"
+          [chart]="pieChartOptions.chart"
+          [labels]="pieChartOptions.labels"
+          [responsive]="pieChartOptions.responsive"
+        ></apx-chart>
+      </div>
+    </div>
+  
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="isbn">
+          <th mat-header-cell *matHeaderCellDef> ISBN </th>
+          <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="bookName">
+          <th mat-header-cell *matHeaderCellDef> Book Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.bookName}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="author">
+          <th mat-header-cell *matHeaderCellDef> Author </th>
+          <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="publication">
+          <th mat-header-cell *matHeaderCellDef> Publication </th>
+          <td mat-cell *matCellDef="let element"> {{element.publication}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef> Qty. </th>
+          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        </ng-container>
+        <ng-container matColumnDef="studentRollNo">
+            <th mat-header-cell *matHeaderCellDef> Student Roll No </th>
+            <td mat-cell *matCellDef="let element"> {{element.studentRollNo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="issuedOnDate">
+            <th mat-header-cell *matHeaderCellDef> Issued On Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.issuedOnDate}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="studentName">
+            <th mat-header-cell *matHeaderCellDef> Student Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.studentName}} </td>
+          </ng-container>
+  
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="branch">
+          <th mat-header-cell *matHeaderCellDef> Branch </th>
+          <td mat-cell *matCellDef="let element"> {{element.branch}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="details">
+          <th mat-header-cell *matHeaderCellDef> Details </th>
+          <td mat-cell *matCellDef="let element"> {{element.details}} </td>
+        </ng-container>
+  
+        <!-- <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn">Delete</button>
+          </td>
+        </ng-container> -->
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
   </div>
   

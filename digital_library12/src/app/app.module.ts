@@ -29,7 +29,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -63,7 +63,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatIconModule,
     NgxChartsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
