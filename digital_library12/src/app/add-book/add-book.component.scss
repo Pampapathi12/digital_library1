@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    width: 400px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field {
+    margin-bottom: 10px;
+  }
+  
+  .submit-button {
+    align-self: center;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  

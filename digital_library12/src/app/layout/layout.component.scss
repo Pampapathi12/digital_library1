@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .sidenav-container {
+    height: 100vh;
+  }
+  
+  .mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 16px;
+    overflow: auto;
+  }
+  

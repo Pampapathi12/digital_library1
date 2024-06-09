@@ -1,0 +1,56 @@
+<!-- view-books.component.html -->
+<div class="table-container">
+    <mat-table [dataSource]="books" class="mat-elevation-z8">
+      <!-- ISBN Column -->
+      <ng-container matColumnDef="isbn">
+        <mat-header-cell *matHeaderCellDef> ISBN </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.isbn }} </mat-cell>
+      </ng-container>
+  
+      <!-- Book Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Book Name </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.name }} </mat-cell>
+      </ng-container>
+  
+      <!-- Author Column -->
+      <ng-container matColumnDef="author">
+        <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.author }} </mat-cell>
+      </ng-container>
+  
+      <!-- Publication Column -->
+      <ng-container matColumnDef="publication">
+        <mat-header-cell *matHeaderCellDef> Publication </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.publication }} </mat-cell>
+      </ng-container>
+  
+      <!-- Qty Column -->
+      <ng-container matColumnDef="qty">
+        <mat-header-cell *matHeaderCellDef> Qty. </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.quantity }} </mat-cell>
+      </ng-container>
+  
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.price | currency }} </mat-cell>
+      </ng-container>
+  
+      <!-- Branch Column -->
+      <ng-container matColumnDef="branch">
+        <mat-header-cell *matHeaderCellDef> Branch </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.branch }} </mat-cell>
+      </ng-container>
+  
+      <!-- Details Column -->
+      <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef> Details </mat-header-cell>
+        <mat-cell *matCellDef="let book"> {{ book.details }} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  
