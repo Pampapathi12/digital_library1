@@ -10,4 +10,7 @@ digital_library1
 6. chart and graph using the ngapex using for pie chart and bar graph
 7. npm run start
 
-![2024-06-10_10h22_50](https://github.com/Pampapathi12/digital_library1/assets/111368155/92b10d9a-a468-4878-adf0-9ac1b5520d0c)
+
+
+https://github.com/Pampapathi12/digital_library1/assets/111368155/2aa3f59c-5a93-49e1-87f5-ba387fbb6348
+
