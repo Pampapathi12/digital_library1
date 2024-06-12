@@ -30,6 +30,19 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+// Angular Material Components
+import { MatSelectModule } from '@angular/material/select';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 
 @NgModule({
@@ -65,6 +78,15 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     MatTableModule,
     MatPaginatorModule,
     NgApexchartsModule,
+    MatSelectModule,
+    HttpClientModule, // Ensure this is imported
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
